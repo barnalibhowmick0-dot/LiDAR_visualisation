@@ -43,3 +43,10 @@ blue_sample = blue[selected]
 
 print("Original points:", len(x))
 print("Selected points:", len(selected))
+
+rgb_maximum = max(
+    red_sample.max(),
+    green_sample.max(),
+    blue_sample.max()
+)
+rgb_divisor = 257 if rgb_maximum>255 else 1
