@@ -4,3 +4,6 @@ from google.colab import files
 uploaded = files.upload()
 lidar_file = next(iter(uploaded))
 print("uploaded_file", lidar_file)
+
+import laspy 
+import numpy as np
