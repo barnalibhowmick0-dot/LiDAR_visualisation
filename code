@@ -1,0 +1,1 @@
+!pip -q install "laspy[lazrs]" plotly
