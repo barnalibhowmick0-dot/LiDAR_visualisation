@@ -7,3 +7,10 @@ print("uploaded_file", lidar_file)
 
 import laspy 
 import numpy as np
+
+las = laspy.read(lidar_file)
+print(las)
+print("Number of points:", len(las.points))
+print("X:",las.x.min(),"to", las.x.max())
+print("Y:",las.y.min(),"to", las.y.max())
+print("Z:",las.z.min(),"to", las.z.max())
