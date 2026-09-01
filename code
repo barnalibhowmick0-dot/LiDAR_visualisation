@@ -21,3 +21,25 @@ z = np.asarray(las.z)
 red = np.asarray(las.red)
 green = np.asarray(las.green)
 blue = np.asarray(las.blue)
+
+maximum_points = 100_000
+rng = np.random.default_rng(42)
+if len(x)> maximum_points:
+  selected = rng.choice(
+      len(x),
+      size=maximum_points,
+      replace=False
+  )
+else:
+  selected=np.arrange(len(x))
+
+x_sample = x[selected]
+y_sample = y[selected]
+z_sample = y[selected]
+
+red_sample = red[selected]
+green_sample = green[selected]
+blue_sample = blue[selected]
+
+print("Original points:", len(x))
+print("Selected points:", len(selected))
