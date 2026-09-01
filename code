@@ -50,3 +50,17 @@ rgb_maximum = max(
     blue_sample.max()
 )
 rgb_divisor = 257 if rgb_maximum>255 else 1
+
+red_8bit = np.clip(
+red_sample / rgb_divisor,0,255
+).astype(np.uint8)
+
+
+green_8bit = np.clip(
+green_sample / rgb_divisor,0,255
+).astype(np.uint8)
+
+
+blue_8bit = np.clip(
+blue_sample / rgb_divisor,0,255
+).astype(np.uint8)
