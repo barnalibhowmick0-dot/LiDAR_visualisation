@@ -68,3 +68,7 @@ rgb_colors = [
 blue_8bit = np.clip(
 blue_sample / rgb_divisor,0,255
 ).astype(np.uint8)
+
+import plotly.graph_objects as go
+x_local = x_sample - x_sample.min()
+y_local = y_sample - y_sample.min()
