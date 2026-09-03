@@ -69,6 +69,56 @@ blue_8bit = np.clip(
 blue_sample / rgb_divisor,0,255
 ).astype(np.uint8)
 
+fig_rgb = go.Figure(
+   data=[
+      go.Scatter3d(
+          x=x_local,
+          y=y_local,
+          z=z_sample,
+          mode="markers",
+          marker=dict(
+              size=1.2,
+              color=rgb_colors,
+              opacity=0.9
+           ),
+          hovertemplate=(
+              "Local X: %{x:.2f} m<br>"
+              "Local Y: %{y:.2f} m<br>"
+              "Elevation: %{z:.2f} m"
+              "<extra></extra>"
+           )
+       )
+   ]
+)
+fig_rgb.update_layout(
+    title="Moszna Palace – RGB LiDAR Point Cloud",
+    width=1100,
+    height=750,
+    paper_bgcolor="white",
+    scene=dict(
+        bgcolor="#101820",
+        xaxis=dict(
+            title="Local X (m)",
+            color="white",
+            gridcolor="#555555"
+        ),
+        yaxis=dict(
+            title="Local Y (m)",
+            color="white",
+            gridcolor="#555555"
+        ),
+        zaxis=dict(
+            title="Elevation (m)",
+            color="white",
+            gridcolor="#555555"
+        ),
+        aspectmode="data"
+    ),
+    margin=dict(l=0, r=0, b=0, t=50)
+)
+
+fig_rgb.show()
+
 import plotly.graph_objects as go
 x_local = x_sample - x_sample.min()
 y_local = y_sample - y_sample.min()
