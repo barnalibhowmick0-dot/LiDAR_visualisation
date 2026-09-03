@@ -60,6 +60,10 @@ green_8bit = np.clip(
 green_sample / rgb_divisor,0,255
 ).astype(np.uint8)
 
+rgb_colors = [
+    f"rgb({r},{g},{b})"
+    for r,g,b in zip(red_8bit,green_8bit,blue_8bit)
+]
 
 blue_8bit = np.clip(
 blue_sample / rgb_divisor,0,255
